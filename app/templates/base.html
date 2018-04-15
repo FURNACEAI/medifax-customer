@@ -81,6 +81,17 @@
   </div>
   <div class="app-content content">
     <div class="content-wrapper">
+      <div class="row" style="margin-bottom: 10px;">
+        <div class="col-4">
+          <a href="/medical/{{ data['id'] }}"><button type="button" class="btn btn-secondary btn-min-width mr-1 mb-1"><strong>Medical</strong></button></a>
+        </div>
+        <div class="col-4">
+          <a href="/dental/{{ data['id'] }}"><button type="button" class="btn btn-secondary btn-min-width mr-1 mb-1"><strong>Dental</strong></button></a>
+        </div>
+        <div class="col-4">
+          <a href="/medications/{{ data['id'] }}"><button type="button" class="btn btn-secondary btn-min-width mr-1 mb-1"><strong>Medications</strong></button></a>
+        </div>
+      </div>
         <div class="row">
           <div class="col-12">
             <a href="tel:+15555555555" id="call-btn"><h4 class="text-uppercase text-center"><button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><strong>I Need Help!</strong></button></h4></a>

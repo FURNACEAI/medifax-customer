@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <h4 class="text-uppercase text-center">Insurance</h4>
+    </div>
+  </div>
+  <div class="row match-height">
+    <div class="col-xl-12 col-lg-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="tab-content px-1 pt-1">
+              <div role="tabpanel" class="tab-pane active in" id="active" aria-labelledby="active-tab"
+              aria-expanded="true">
+              <div class="container">
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Medical Insurance</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Provider</strong>
+                  </div>
+                  <div class="col col=6">
+                    <strong>{{ data['ins_provider_med'] }}</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Group ID</strong>
+                  </div>
+                  <div class="col col-6">
+                    {{ data['ins_planid_med'] }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Contact</strong>
+                  </div>
+                  <div class="col col-8">
+                    {{ data['ins_street_addr_med'] }}<br />
+                    {{ data['ins_city_med'] }}, {{ data['ins_state_med'] }} {{ data['ins_zip_med'] }}<br />
+                    {{ data['ins_phone_med'] }}<br />
+                    {{ data['ins_email_med'] }}<br />
+                  </div>
+                </div>
+
+                <hr />
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Dental Insurance</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Provider</strong>
+                  </div>
+                  <div class="col col=6">
+                    <strong>{{ data['ins_provider_dental'] }}</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Group ID</strong>
+                  </div>
+                  <div class="col col-6">
+                    {{ data['ins_planid_dental'] }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Contact</strong>
+                  </div>
+                  <div class="col col-8">
+                    {{ data['ins_street_addr_dental'] }}<br />
+                    {{ data['ins_city_dental'] }}, {{ data['ins_state_dental'] }} {{ data['ins_zip_dental'] }}<br />
+                    {{ data['ins_phone_dental'] }}<br />
+                    {{ data['ins_email_dental'] }}<br />
+                  </div>
+                </div>
+                <hr />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,420 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="row">
+    <div class="col-12">
+      <h4 class="text-uppercase text-center">Medical Infomation</h4>
+    </div>
+  </div>
+  <div class="row match-height">
+    <div class="col-xl-12 col-lg-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="tab-content px-1 pt-1">
+              <div role="tabpanel" class="tab-pane active in" id="active" aria-labelledby="active-tab"
+              aria-expanded="true">
+              <div class="container">
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Name</strong>
+                  </div>
+                  <div class="col col=6">
+                    {{ data['name']['first'] }} {{ data['name']['last'] }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>DOB</strong>
+                  </div>
+                  <div class="col col-6">
+                    {{ data['dob'] }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Age</strong>
+                  </div>
+                  <div class="col col-6">
+                    {{ data['dob'] | age }}
+                  </div>
+                </div>
+                <hr />
+                <!-- Vitals -->
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Blood Pressure</strong>
+                  </div>
+                  <div class="col col-6">
+                    {% autoescape false %}
+                      {{ data['blood_pressure_systolic'] }} / {{ data['blood_pressure_diastolic'] }}
+                    {% endautoescape %}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6">
+                    <strong>Blood Type</strong>
+                  </div>
+                  <div class="col col-4">
+                      {{ data['blood_type'] }}
+                  </div>
+                </div>
+
+                <hr />
+
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Gender</strong>
+                  </div>
+                  <div class="col col-8">
+                      {{ data['gender'] }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Height</strong>
+                  </div>
+                  <div class="col col-8">
+                    {% if data['height'] %}
+                      {{ data['height'] | height }}
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Weight</strong>
+                  </div>
+                  <div class="col col-8">
+                    {% if data['weight'] %}
+                      {{ data['weight'] }} lbs
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>BMI</strong>
+                  </div>
+                  <div class="col col-8">
+                    {% if data['bmi'] %}
+                      {{ data['bmi'] }}
+                    {% endif %}
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Emergency Contact</strong>
+                  </div>
+                  <div class="col col-12">
+                    {% autoescape false %}
+                      {{ data['patient_consents'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                  </div>
+                </div>
+
+                <hr />
+
+                <!-- Allergies -->
+                <div class="row">
+                  <div class="col col-4">
+                    <strong>Allergies</strong>
+                  </div>
+                  <div class="col col-6">
+                    {% autoescape false %}
+                      {{ data['allergies'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                  </div>
+                </div>
+
+                <hr />
+
+                <!-- Current Medical Conditions -->
+                <div class="row">
+                  <div class="col col-sm-12 col-md-4">
+                    <strong>Medical Conditions</strong>
+                  </div>
+                </div>
+                {% if data['current_problems_0'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_0'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_1'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_1'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_2'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_2'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_3'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_3'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_4'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_4'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_5'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_5'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_6'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_6'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_7'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_7'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_8'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_8'] }}
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['current_problems_9'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['current_problems_9'] }}
+                  </div>
+                </div>
+                {% endif %}
+                <hr />
+                <div class="row">
+                  <div class="col col-sm-12 col-md-6">
+                    <strong>Current Medications</strong>
+                  </div>
+                </div>
+                {% if data['medication_name_0'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['medication_name_0'] }} - {{ data['medication_dose_0'] }}mg - {{ data['medication_freq_0'] }} / day
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['medication_name_1'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['medication_name_1'] }} - {{ data['medication_dose_1'] }}mg - {{ data['medication_freq_1'] }} / day
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['medication_name_2'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['medication_name_2'] }} - {{ data['medication_dose_2'] }}mg - {{ data['medication_freq_2'] }} / day
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['medication_name_3'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['medication_name_3'] }} - {{ data['medication_dose_3'] }}mg - {{ data['medication_freq_3'] }} / day
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['medication_name_4'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['medication_name_4'] }} - {{ data['medication_dose_4'] }}mg - {{ data['medication_freq_4'] }} / day
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['medication_name_5'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['medication_name_5'] }} - {{ data['medication_dose_5'] }}mg - {{ data['medication_freq_5'] }} / day
+                  </div>
+                </div>
+                {% endif %}
+                {% if data['medication_name_6'] %}
+                <div class="row">
+                  <div class="col col-12 offset-1">
+                    &#8226; {{ data['medication_name_6'] }} - {{ data['medication_dose_6'] }}mg - {{ data['medication_freq_6'] }} / day
+                  </div>
+                </div>
+                {% endif %}
+                  {% if data['medication_name_7'] %}
+                  <div class="row">
+                    <div class="col col-12 offset-1">
+                      &#8226; {{ data['medication_name_7'] }} - {{ data['medication_dose_7'] }}mg - {{ data['medication_freq_7'] }} / day
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if data['medication_name_8'] %}
+                  <div class="row">
+                    <div class="col col-12 offset-1">
+                      &#8226; {{ data['medication_name_8'] }} - {{ data['medication_dose_8'] }}mg - {{ data['medication_freq_8'] }} / day
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if data['medication_name_9'] %}
+                  <div class="row">
+                    <div class="col col-12 offset-1">
+                      &#8226; {{ data['medication_name_9'] }} - {{ data['medication_dose_9'] }}mg - {{ data['medication_freq_9'] }} / day
+                    </div>
+                  </div>
+                  {% endif %}
+
+                <hr />
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Patient Preferences</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6 offset-1">
+                    <p>
+                    {% autoescape false %}
+                      {{ data['patient_preferences'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Family History</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6 offset-1">
+                    <p>
+                    {% autoescape false %}
+                      {{ data['family_history'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Lifestyle History</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6 offset-1">
+                    <p>
+                    {% autoescape false %}
+                      {{ data['lifestyle_history'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Social History</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6 offset-1">
+                    <p>
+                    {% autoescape false %}
+                      {{ data['social_history'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Care Plan</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6 offset-1">
+                    <p>
+                    {% autoescape false %}
+                      {{ data['care_plan'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Lab Results</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6 offset-1">
+                    <p>
+                    {% autoescape false %}
+                      {{ data['lab_results'] | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-12">
+                    <strong>Referrals</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-6 offset-1">
+                    <p>
+                      {% autoescape false %}
+                      {{ data['referrals'] | replace("\n", "<br/>") }}
+                      {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+
+                <hr />
+
+                <!-- Images -->
+                <div class="row">
+                  <div class="col col-12">
+                    <p><strong>Diagnostic Images</strong></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-12">
+                    <p><img src="https://s3.amazonaws.com/medifax-images/efdf746e-384e-11e8-a5b9-62669ce78e8e/catscan.jpg" class="img-fluid" /></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-12">
+                    <p><img src="https://s3.amazonaws.com/medifax-images/efdf746e-384e-11e8-a5b9-62669ce78e8e/radiology.jpg" class="img-fluid" /></p>
+                  </div>
+                </div>
+
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

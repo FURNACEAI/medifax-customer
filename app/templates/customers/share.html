@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <h4 class="text-uppercase text-center">Share Your Records</h4>
+    </div>
+  </div>
+  <div class="row match-height">
+    <div class="col-xl-12 col-lg-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="tab-content px-1 pt-1">
+              <div role="tabpanel" class="tab-pane active in" id="active" aria-labelledby="active-tab"
+              aria-expanded="true">
+              <div class="container">
+
+                <div class="card border-grey border-lighten-3 m-0">
+                  <div class="card-content">
+                    <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2">
+                      <span>Enter an Email Address</span>
+                    </p>
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                      <ul>
+                          {% for message in messages %}
+                          <li>{{ message }}</li>
+                          {% endfor %}
+                      </ul>
+                      {% endif %}
+                    {% endwith %}
+                    <div class="card-body pt-0">
+                      <form class="form-horizontal" method="post" action="">
+                        <fieldset class="form-group floating-label-form-group">
+                          {{ form.hidden_tag() }}
+                          {% for error in form.email.errors %}
+                          <span style="color: red;">[{{ error }}]</span>
+                          {% endfor %}
+                          {{ form.email(class="form-control", id="share-email", placeholder="Email Address") }}
+                        </fieldset>
+                        <div class="form-group row">
+                        </div>
+                        {{ form.submit(class="btn btn-outline-primary btn-block") }}
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

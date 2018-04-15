@@ -48,6 +48,20 @@ def customer_dental(user_id):
     r = requests.get(url, headers=cfg._AWS['headers'])
     return render_template('customers/dental.html', title='Customer Record | Medifax', data=r.json())
 
+""" CUSTOMER > Medications """
+@application.route('/medications/<user_id>', methods=['GET'])
+def customer_medications(user_id):
+    url = "%s%s%s%s" % (cfg._AWS['customers']['base'],cfg._AWS['status'],cfg._AWS['customers']['get'],user_id)
+    r = requests.get(url, headers=cfg._AWS['headers'])
+    return render_template('customers/medications.html', title='Customer Record | Medifax', data=r.json())
+
+""" CUSTOMER > Account """
+@application.route('/account/<user_id>', methods=['GET'])
+def customer_account(user_id):
+    url = "%s%s%s%s" % (cfg._AWS['customers']['base'],cfg._AWS['status'],cfg._AWS['customers']['get'],user_id)
+    r = requests.get(url, headers=cfg._AWS['headers'])
+    return render_template('customers/account.html', title='Customer Record | Medifax', data=r.json())
+
 """ CUSTOMER > Insurance """
 @application.route('/insurance/<user_id>', methods=['GET'])
 def customer_insurance(user_id):

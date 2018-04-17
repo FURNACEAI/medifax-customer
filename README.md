@@ -2,8 +2,8 @@
 
 ## Running Flask in Local Dev
 
-export FLASK_APP=application.py
-export FLASK_DEBUG=1
+'''export FLASK_APP=application.py
+export FLASK_DEBUG=1'''
 
 ## Deploying to Stage
 

@@ -27,10 +27,10 @@ class Customer():
             return False
 
     def load(self, id):
-        url = "https://3ts6m0h20j.execute-api.us-east-1.amazonaws.com/dev/employee/%s" % id
-        r = requests.get(url).json()
-        self.user_id = r['id']
-        self.first_name = r['name']['first']
+        #url = "https://3ts6m0h20j.execute-api.us-east-1.amazonaws.com/dev/employee/%s" % id
+        #r = requests.get(url).json()
+        #self.user_id = r['id']
+        #self.first_name = r['name']['first']
         return self
 
     def set_password(self, password):

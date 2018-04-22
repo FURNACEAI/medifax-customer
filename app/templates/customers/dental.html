@@ -49,16 +49,11 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col col-12">
-                    <!--
-                    <p><a href="https://s3.amazonaws.com/medifax-images/efdf746e-384e-11e8-a5b9-62669ce78e8e/dental-chart.jpg"><img src="https://s3.amazonaws.com/medifax-images/efdf746e-384e-11e8-a5b9-62669ce78e8e/dental-chart.jpg" class="img-fluid" /></a></p>-->
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col col-12">
-                    <!--
-                    <p><a href="https://s3.amazonaws.com/medifax-images/efdf746e-384e-11e8-a5b9-62669ce78e8e/dental-xray.jpg"><img src="https://s3.amazonaws.com/medifax-images/efdf746e-384e-11e8-a5b9-62669ce78e8e/dental-xray.jpg" class="img-fluid" /></a></p>-->
-                  </div>
+                  {% for image in data.images.dental %}
+                    <div class="col-md-3" style="padding: 10px;">
+                        <a href="{{ image }}" target="_blank"><img src="{{ image }}" /></a>
+                    </div>
+                  {% endfor %}
                 </div>
 
 

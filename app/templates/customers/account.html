@@ -16,6 +16,7 @@
               aria-expanded="true">
               <div class="container">
 
+                {% if 'Awaiting HIPAA Consent' in data['status'] %}
                 <div class="row">
                   <div class="col col-12">
                     <iframe src="https://secure.na2.echosign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhCo8-CB6Zs7hHVBBJsq8iRvaQjtIPllbc25yaXsBCrLnyOLm03svW0qlfIKVqIO0UI*&hosted=false" width="100%" height="100%" frameborder="0" style="border: 0; overflow: hidden; min-height: 500px; min-width: 600px;"></iframe>
@@ -26,7 +27,13 @@
                     <iframe src="https://secure.na2.echosign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBcXtaTv2Y3KYjHtXaatlsTwcAwsoqOi1pU1jD_L4J_SPVAngebrGOBtF8ZRaf9t7g*&hosted=false" width="100%" height="100%" frameborder="0" style="border: 0; overflow: hidden; min-height: 500px; min-width: 600px;"></iframe>
                   </div>
                 </div>
-
+                {% else %}
+                <div class="row">
+                  <div class="col col-12">
+                    Your contracts have been submitted. 
+                  </div>
+                </div>
+                {% endif %}
               </div>
               </div>
             </div>

@@ -324,7 +324,11 @@
                 <div class="row">
                   {% for image in data.images.medical %}
                     <div class="col-md-4" style="padding: 10px;">
-                        <a href="{{ image }}" target="_blank"><img src="{{ image }}" class="img-fluid" /></a>
+                        <center>
+                          <a href="{{ image[0] }}" target="_blank"><img src="{{ image[0] }}" class="img-fluid" /></a>
+                          <div style="font-weight: 600">{{ image[1] }}</div>
+                          <div>{{ image[2] }}</div>
+                        </center>
                     </div>
                   {% endfor %}
                 </div>
